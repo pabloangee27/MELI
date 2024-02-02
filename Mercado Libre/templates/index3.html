@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI SSTI Demo</title>
+</head>
+<body>
+    <h1>Evaluate Expression:</h1>
+    <form action="/evaluate/" method="post">
+        <label for="expression">Expression:</label>
+        <input id="expression" type="text" name="value" value="" placeholder="loquesea">
+        
+
+        <button type="submit">Calculate</button>
+    </form>
+    <div>
+        Result: {{ payload | safe }}
+    </div>
+</body>
+</html>

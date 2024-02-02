@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBC News</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="jumbotron" style="color:black">
+
+    <h1 style="color:black">
+
+        BBC News Site
+
+    </h1>
+	<h2 style="color:green" align="right">
+	
+	    Search for content here
+	</h2>
+	<form action="/process_search_bbc" method="POST" align="right">
+        <input type="text" name="keyword">
+        <button type="submit">Submit</button>
+    </form>
+	<h3 style="color:green" align="center">
+	
+	    Switch to your favorite news journal
+		
+	</h3>
+	<h4 align="center">
+	    <a href="http://127.0.0.1:8000/bbc">BBC News</a>
+	</h4>
+	<h5 align = "center">
+	    <a href="http://127.0.0.1:8000/cnn">CNN News</a>
+	</h5>
+	<h6 align = "center">
+	    <a href="http://127.0.0.1:8000/abc-news">ABC News</a>
+	</h6>
+	
+</div>
+
+<div class="container">
+
+    {% for new, des, im in data %}
+
+    <h5>News: </h5> {{new}}
+	<img src="{{im}}" alt="">
+    <h6>Description: </h6> {{des}}
+	<br><br>
+	<br><br>
+
+    {% endfor %}
+
+</div>
+<div class="jumbotron" style="color:green">
+    <h2 style="color:green" align="right">
+	
+	    Please, Leave us a comment!
+	</h2>
+	<form action="/comments" method="POST" align="right">
+        <input type="text" name="name" placeholder="Your Name">
+		<br><br>
+		<input type="text" name="comment" placeholder="Your comment">
+		<br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
